@@ -19,13 +19,11 @@ function App() {
   }
 
   return (
-    <div className="App">
       <div>
         <h1>{title ? title : "Click an animal for a fun fact"}</h1>
         {showBackground && background}
         <div onClick={displayFact} className="animals">{images}</div>
         <p id="fact"></p>
-    </div>
     </div>
   );
 }
