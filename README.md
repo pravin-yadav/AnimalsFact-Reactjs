@@ -1,6 +1,6 @@
 # Animals Fact
 
-This Todo project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+This Animals Fact project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
 ## Installation
 
