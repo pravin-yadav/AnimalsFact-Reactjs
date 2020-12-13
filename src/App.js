@@ -1,23 +1,31 @@
-import logo from './logo.svg';
+import React from 'react';
+import { animals } from './animals';
 import './App.css';
 
 function App() {
+
+  const title = "";
+  const background =<img className="background" src="/images/ocean.jpg" alt="ocean" /> 
+  let images = [];
+
+  for(const animal in animals){
+  images.push(<img key={animal} className="animal" alt={animal} src={animals[animal].image} aria-label={animal} role="button" />);
+  }
+
+  const showBackground = true;
+  const displayFact = (e) => {
+    let selectedAnimal = e.target.alt;
+    document.getElementById('fact').innerHTML = animals[selectedAnimal].facts;
+  }
+
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <div>
+        <h1>{title ? title : "Click an animal for a fun fact"}</h1>
+        {showBackground && background}
+        <div onClick={displayFact} className="animals">{images}</div>
+        <p id="fact"></p>
+    </div>
     </div>
   );
 }
